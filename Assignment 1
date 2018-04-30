@@ -1,0 +1,54 @@
+Question:
+Write a python program to find and display the product of three positive integer values based on the rule mentioned below:
+It should display the product of the three values except when one of the integer value is 7. In that case, 7 should not be included in the product and the values to its left also should not be included.
+If there is only one value to be considered, display that value itself. If no values can be included in the product, display -1.
+
+
+Sample Input	Expected Output
+1, 5, 3	        15
+3, 7, 8	        8
+7, 4, 3	        12
+1, 5, 7	        -1
+
+
+def prod_functin(a, b, c):
+  
+  prod = 1
+  if (a == 7):
+    prod = b*c
+  elif (b == 7):
+    prod = c
+  elif (a == 7 and c == 7):
+    prod = -1
+  elif (c == 7 ):
+    prod = a
+  else:
+    prod = a*b*c
+    
+  return prod
+  
+print (prod_functin(3, 7, 8))
+
+Question 2:
+You have x no. of 5 rupee coins and y no. of 1 rupee coins. You want to purchase an item for amount z. 
+The shopkeeper wants you to provide exact change. You want to pay using minimum number of coins. 
+How many 5 rupee coins and 1 rupee coins will you use? If exact change is not possible then display -1.
+
+
+def amount_pay(five_coins,one_coins,amount):
+  print ("Number of five Rs coins", five_coins)
+  print ("Number of one Rs coins", one_coins)
+  no_of_five_needed = int(amount/5)
+  no_of_one_needed = amount%5
+  
+  if (five_coins < no_of_five_needed):
+    return -9
+  elif (one_coins < no_of_one_needed):
+    return -1
+  else :
+    return no_of_five_needed, no_of_one_needed
+    
+print ("Number of coins to be paid", amount_pay (4,2,21) )
+
+
+
