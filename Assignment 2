@@ -1,23 +1,46 @@
 Question 1:
 Write a Python program to generate the next 15 leap years starting from a given year. Populate the leap years into a list and display the list. 
-Also write the pytest test cases to test the program.
+
+def leap_year(year):
+    if (year%4 == 0):
+        if (year%100 == 0):
+            if (year % 400 == 0):
+                for i in range (0,15):
+                    year = year + 4
+                    print (year)
+        else:
+            for i in range (0,15):
+                year = year + 4
+                print (year)
+                         
+    else:
+        remainder = year % 4
+        new_year = year + 4 - remainder
+        for i in range (0,15):
+            print (new_year)
+            new_year = new_year + 4
+            
+leap_year(2001)
 
 Question 2:
-ARS Gems Store sells different varieties of gems to its customers.
-
-Write a Python program to calculate the bill amount to be paid by a customer based on the list of gems and quantity purchased. Any purchase with a total bill amount above Rs.30000 is entitled for 5% discount. If any gem required by the customer is not available in the store, then consider total bill amount to be -1.
-
-Assume that quantity required by the customer for any gem will always be greater than 0.
-
-Perform case-sensitive comparison wherever applicable.
-
-Question 3:
 Write a python function to check whether three given numbers can form the sides of a triangle. 
 Hint: Three numbers can be the sides of a triangle if none of the numbers are greater than or equal to the sum of the other two numbers.
 
-Also write the pytest test cases to test the program.
+def triangl(a,b,c):
+    if (a+b > c):
+        if (b+c > a):
+            if (a+c > b):
+                print (" triangle")
+            else:
+                print ("Not a triangle")
+        else:
+            print ("Not a triangle")
+    else:
+        print ("Not a triangle")
+        
+triangl(12, 2, 3) 
 
-Question 4:
+Question 3:
 The program provided in the starter code tab is written to display “*” as per the expected output given below. But the code is having logical errors, debug the program using Eclipse Debugger and correct it.
 
 Expected Output:
@@ -27,29 +50,22 @@ Expected Output:
 **
 *
 
+for i in range(1,5):
+    for j in range (i,5):
+        print ('*', end = '')
+    print ('')
+ 
 
-Question 5:
-Write a python program to solve a classic ancient Chinese puzzle.
-We count 35 heads and 94 legs among the chickens and rabbits in a farm. How many rabbits and how many chickens do we have? 
-
-
-Sample Input	        Expected Output
-heads-150 legs-400	    100 50
-heads-3 legs-11	    No solution
-heads-3 legs-12	         0 3
-heads-5 legs-10     	  5 0
-
-Question 6:
-Write a python program which finds the maximum number from num1 to num2 (num2 inclusive) based on the following rules.
-
-Always num1 should be less than num2
-Consider each number from num1 to num2 (num2 inclusive). Populate the number into a list, if the below conditions are satisfied
-Sum of the digits of the number is a multiple of 3
-Number has only two digits
-Number is a multiple of 5
-Display the maximum element from the list
-In case of any invalid data or if the list is empty, display -1.
-
-Question 7:
+Question 4:
 Given a list of integer values. Write a python program to check whether it contains same number in adjacent position. 
 Display the count of such adjacent occurrences.
+
+list1 = [10,10,3,4,5,5,5,4]
+count = 0
+len_list = len(list1)
+for i in range (1,len_list):
+    if (list1[i-1] == list1[i]):
+        count = count+1
+        
+print (count)  
+
