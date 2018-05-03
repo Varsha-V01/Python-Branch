@@ -50,5 +50,134 @@ def amount_pay(five_coins,one_coins,amount):
     
 print ("Number of coins to be paid", amount_pay (4,2,21) )
 
+Question 3:
+The Metro Bank provides various types of loans such as car loans, business loans and house loans to its account holders. Write a python program to implement the following requirements:
+Initialize the following variables with appropriate input values:account_number, account_balance, salary, loan_type, loan_amount_expected and customer_emi_expected.
+The account number should be of 4 digits and its first digit should be 1.
+The customer should have a minimum balance of Rupees 1 Lakh in the account.
+If the above rules are valid, determine the eligible loan amount and the EMI that the bank can provide to its customers based on their salary and the loan type they expect to avail.
+The bank would provide the loan, only if the loan amount and the number of EMI’s requested by the customer is less than or equal to the loan amount and the number of EMI’s decided by the bank respectively.
+Display appropriate error messages for all invalid data. If all the business rules are satisfied ,then display account number, eligible and requested loan amount and EMI’s.
+Test your code by providing different values for the input variables.
+
+Salary	Loan type	Eligible loan amount	No. of EMI’s required to repay
+> 25000	Car	500000	36
+> 50000	House	6000000	60
+> 75000	Business	7500000	84
+
+
+def calcc(salary, loan_type, loan_amount_expected,customer_emi_expected):
+    if (loan_type == 'Car' and salary > 25000):
+        if (loan_amount_expected <= 500000 and customer_emi_expected <= 36):
+            return "Eligible loan amount = 500000 and EMI = 36"
+        else:
+            return "Not eligible"
+    elif (loan_type == 'House' and salary > 50000):
+        if (loan_amount_expected <= 6000000 and customer_emi_expected <= 60):
+            return "Eligible loan amount = 6000000 and EMI = 60"
+        else:
+            return "Not eligible"
+    elif (loan_type == 'Business' and salary > 75000):
+        if (loan_amount_expected <= 7500000 and customer_emi_expected <= 84):
+            return "Eligible loan amount = 7500000 and EMI = 84"
+        else:
+            return "Not eligible"
+    else:
+        return "Not eligible"
+
+def validation(account_number,account_balance, salary, loan_type, loan_amount_expected, customer_emi_expected):
+    
+
+    if (len(str(account_number)) != 4):
+        return "account number should be four digit number"
+    else:
+        if (account_number<1000 or account_number>1999):
+            return "accout number should start from 1"
+        else:
+            print ("account number validated")
+    
+    if (account_balance < 100000):
+        return "Customer should have a minimum balance of Rupees 1 Lakh in the account"
+    else:
+        print ("Account balance validated")
+    
+    return ( calcc(salary, loan_type, loan_amount_expected, customer_emi_expected) )
+    
+        
+
+print (validation(1234,100000,750000,'Business',7500000,45 ))
+
+
+Question 5:
+
+Write a python program to generate and display the next date of a given date.
+
+Assume that 
+Date is provided as day, month and year as shown in below table.
+The input provided is always valid. Output should be day-month-year.
+Hint: print(day,"-",month,"-",year) will display day-month-year
+
+Sample Input	Expected Output
+Day	    1	      2-9-2015
+Month	  9
+Year	  2015
+
+
+def generate_next_date(day,month,year):
+    #Start writing your code here
+    if (day < 28):
+        next_day = day+1
+        next_month = month
+        next_year = year
+    elif (day == 28 or day == 29):
+            #check if month is february
+            if (month == 2):
+                #check if year is leap year
+                if (year%4 == 0):
+                    if (year%100 == 0):
+                        if (day == 29):
+                            next_day = 1
+                            next_month = 3
+                            next_year= year
+                        else:
+                            next_day = day + 1
+                            next_month = month
+                            next_year = year
+                    else:
+                            next_day = day + 1
+                            next_month = month
+                            next_year = year
+            else:
+                next_day = day+1
+                next_month = month
+                next_year = year
+                
+    elif (day == 30):
+        if (month == 1 or month == 3 or month == 5 or month == 7 or month == 8 or month==10 or month == 12):
+            next_day = day + 1
+            next_month = month
+            next_year = year
+        else:
+            next_day = 1
+            next_month = month + 1 
+            next_year = year
+    else:
+        if (month == 1 or month == 3 or month == 5 or month == 7 or month == 8 or month==10):
+            next_day = 1
+            next_month = month + 1 
+            next_year = year
+        if (month == 12):
+            next_day = 1
+            next_month =  1 
+            next_year = year+1
+
+    
+    print(next_day,"-",next_month,"-",next_year)
+
+
+generate_next_date(28,2,2016)
+
+
+
 
 
