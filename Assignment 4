@@ -1,0 +1,82 @@
+Question1:
+Write a python function, find_pairs_of_numbers() which accepts a list of positive integers with no repetitions and returns count of pairs of numbers in the list that adds up to n. The function should return 0, if no such pairs are found in the list.
+
+Also write the pytest test cases to test the program.
+
+Sample Input	Expected Output
+[1, 2, 7, 4, 5, 6, 0, 3], 6	3
+[3, 4, 1, 8, 5, 9, 0, 6], 9	4
+
+Question2:
+A teacher is in the process of generating few reports based on the marks scored by the students of her class in a project based assessment.
+Assume that the marks of her 10 students are available in a tuple. The marks are out of 25.
+
+Write a python program to implement the following functions:
+find_more_than_average(): Find and return the percentage of students who have scored more than the average mark of the class.
+generate_frequency(): Find how many students have scored the same marks. For example, how many have scored 0, how many have scored 1, how many have scored 3….how many have scored 25. The result should be populated in a list and returned.
+sort_marks(): Sort the marks in the increasing order from 0 to 25. The sorted values should be populated in a list and returned.
+
+Sample Input	Expected Output
+list_of_marks = (12,18,25,24,2,5,18,20,20,21)	70.0 
+[0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 2, 1, 0, 0, 1, 1]
+[2, 5, 12, 18, 18, 20, 20, 21, 24, 25]
+
+Question3:
+Write a python function, create_largest_number(), which accepts a list of numbers and returns the largest number possible by concatenating the list of numbers. 
+Note: Assume that all the numbers are two digit numbers.
+
+Also write the pytest test cases to test the program.
+
+Sample Input	Expected Output
+23,34,55	553423
+
+
+Question4:
+A teacher is conducting a camp for a group of five children. Based on their performance and behavior during the camp, the teacher rewards them with chocolates.
+
+Write a Python function to
+Find the total number of chocolates received by all the children put together.
+Assume that each child is identified by an id and it is stored in a tuple and the number of chocolates given to each child is stored in a list.
+The teacher also rewards a child with few extra chocolates for his/her best conduct during the camp.
+If the number of extra chocolates is less than 1, an error message "Extra chocolates is less than 1", should be displayed.
+If the given child Id is invalid, an error message "Child id is invalid" should be displayed.
+Otherwise, the extra chocolates provided for the child must be added to his/her existing number of chocolates and display the list containing the total number of chocolates received by each child.
+
+Question5:
+Write a python function, check_double(number) which accepts a whole number and returns True if it satisfies the given conditions.
+The number and its double should have exactly the same number of digits.
+Both the numbers should have the same digits ,but in different order.
+Otherwise it should return False.
+
+Example: If the number is 125874 and its double, 251748, contain exactly the same digits, but in a different order.
+
+Question6:
+A vendor at a food court is in the process of automating his order management system.
+The vendor serves the following menu – Veg Roll, Noodles, Fried Rice and Soup and also maintains the quantity available for each item. The customer can order any combination of items. The customer is provided the item if the requested quantity of item is available with the vendor.
+
+Write a python program which implements the following functions.
+place_order(*item_tuple): This function accepts the order placed by the customer. Consider it to be a variable length argument as each customer may have a different order.
+The function should check whether the items requested are present in the vendor’s menu and if so, it should check whether the requested quantity is available for each by invoking the check_quantity_available() method.
+
+The function should display appropriate messages for each item in the order for the below scenarios:
+When the requested item is not available in vendor’s menu, display <Item Name> is not available
+When the quantity requested by the customer is not available, display <Item Name> stock is over
+When the requested quantity of the item is available with the vendor, display <Item Name> is available
+
+check_quantity_available(index,quantity_requested): This function should check whether the requested quantity of the specified item is available. If so, it should reduce the quantity requested from the quantity available for that item and return True. Otherwise, it should return False.
+
+Test your code by using the given sample inputs. 
+Verify your code by using the 2nd sample input(highlighted) given below:
+
+
+Sample Input	Expected Output
+Menu and quantity available	Items Ordered	
+(Veg Roll, Noodles, Fried Rice , Soup)
+[2,200,250,3]	Veg Roll,2
+Noodles,2	Veg Roll is available
+Noodles is available
+(Veg Roll, Noodles, Fried Rice , Soup)
+[2,200,3,0]	Fried Rice,2
+Soup,1	
+
+
