@@ -49,6 +49,22 @@ Price(Rs) per ticket = 80
 The bus runs on multiple routes having different distance in kms and number of passengers.
 Write a function to calculate and return the profit earned (Rs) in each route. Return -1 in case of loss.
 
+def generate_ticket(airline,source,destination,no_of_passengers):
+    ticket_number_list=[]
+    count=100
+    #Write your logic here
+    src = source [0:3]
+    des = destination [0:3]
+    #Use the below return statement wherever applicable
+    for i in range(no_of_passengers,0,-1):
+        count=count+1
+        ticket= airline+':'+src+':'+des+':'+str(count)
+        ticket_number_list.append(ticket)
+    return ticket_number_list
+
+
+print(generate_ticket("AI","Bangalore","London",2))
+
 
 Question3:
 Given a string containing uppercase characters (A-Z), compress the string using Run Length encoding. Repetition of character has to be replaced by storing the length of that run.
@@ -60,6 +76,23 @@ Provide different String values and test your program.
 Sample Input	    Expected Output
 AAAABBBBCCCCCCCC	4A4B8C
 AABCCA	          2A1B2C1A
+
+def len_run(word):
+    word = word + ' '
+    word_len = len(word)
+    new_word=''
+    count = 1
+    for i in range(1,word_len):
+        if (word[i] == word[i-1]):
+            count = count + 1
+            continue
+        else:
+            new_word = new_word + str(count) + word[i-1]
+            count = 1
+            
+    return new_word
+
+print(len_run('AABCCA'))
 
 
 Question4:
@@ -82,7 +115,36 @@ Sample Input	                Expected Output
 [101,O,102,O,302,P,305,E,401,O,656,O]	  Orthopedics
 [101,O,102,E,302,P,305,P,401,E,656,O,987,E]	  ENT
 
+def speciality(input_list):
+    
+    count_p = 0
+    count_o = 0
+    count_e = 0
+    for i in input_list:
+        if (str(i).lower() == 'p'):
+            count_p +=1
+        elif(str(i).lower() == 'o'):
+            count_o +=1
+        else:
+            count_e +=1
+            
+    if ( count_e > count_o and count_e > count_p):
+        print ("ENT")
+    elif ( count_o > count_e and count_o > count_p):
+        print("Orthopedics")
+    else:
+        print("Pediatrics")
+        
+speciality([101,'O',102,'E',302,'P',305,'P',401,'E',656,'O',987,'E'])
 
 Question5:
 Write a python program to display all the common characters between two strings. Return -1 if there are no matching characters.
 
+list1 = [12,20,20,30,30,40,50]
+list2 = [12,12,20,20,20,60]
+
+set1 = set(list1)
+set2 = set(list2)
+
+common = set1 & set2
+print (common)
