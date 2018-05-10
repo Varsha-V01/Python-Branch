@@ -1,0 +1,59 @@
+Question 1:
+Write a python function, nearest_palindrome() which accepts a number and returns the nearest palindrome greater than the given number. 
+Also write the pytest test cases to test the program.
+
+Sample Input	Expected Output
+12300	12321
+12331	12421
+
+Question 2:
+Write a python function, encrypt_sentence() which accepts a message and encrypts it based on rules given below and returns the encrypted message.
+Words at odd position -> Reverse It
+Words at even position -> Rearrange the characters so that all consonants appear before the vowels and their order should not change
+
+Note: 
+Assume that the sentence would begin with a word and there will be only a single space between the words.
+Perform case sensitive string operations wherever necessary.
+Also write the pytest test cases to test the program.
+
+Sample Input	Expected Output
+the sun rises in the east	eht snu sesir ni eht stea
+
+Question 3:
+Write a python function, find_correct() which accepts a dictionary and returns a list as per the rules mentioned below.
+The input dictionary will contain correct spelling of a word as key and the spelling provided by a contestant as the value.
+
+The function should identify the degree of correctness as mentioned below:
+CORRECT, if it is an exact match
+ALMOST CORRECT, if no more than 2 letters are wrong
+WRONG, if more than 2 letters are wrong or if length (correct spelling versus spelling given by contestant) mismatches.
+
+and return a list containing the number of CORRECT answers, number of ALMOST CORRECT answers and number of WRONG answers. 
+Assume that the words contain only uppercase letters and the maximum word length is 10.
+
+Also write the pytest test cases to test the program.
+
+Sample Input	Expected Output
+{“THEIR”: “THEIR”, “BUSINESS”: “BISINESS”,”WINDOWS”:”WINDMILL”,”WERE”:”WEAR”,”SAMPLE”:”SAMPLE”}	[2, 2, 1]
+
+
+Question 4:
+In a fair coin we have an equal chance (50%) of either getting a ‘head’ or ‘tail’.  That is if we toss the coin a large number of times we would observe head approximately 50% of the time. Write a program to implement a biased coin toss where the chance of getting a head is 70% (and tail 30%). That is if we invoke the program 1000 times we should see the head randomly approximately 700 times.
+
+
+Question 5:
+Write python function, sms_encoding() which accepts a sentence and converts it into an abbreviated sentence to be sent as SMS and returns the abbreviated sentence. 
+
+Rules are as follows: 
+a. Spaces are to be retained as is 
+b. Each word should be encoded separately
+If a word has only vowels then retain the word as is
+If a word has a consonant (at least 1) then retain only those consonants
+
+Note: Assume that the sentence would begin with a word and there will be only a single space between the words.
+
+Sample Input	Expected Output
+I love Python	I lv Pythn
+MSD says I love cricket and tennis too	MSD sys I lv crckt nd tnns t
+I will not repeat mistakes	I wll nt rpt mstks
+
