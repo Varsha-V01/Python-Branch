@@ -1,20 +1,22 @@
 Question 1:
 Write a recursive function, is_palindrome() to find out whether a string is a palindrome or not. The function should return true, if it is a palindrome. Else it should return false. 
 
-Note- Perform case insensitive operations wherever necessary.
+def is_palindrom(word):
+    if ( len(word) < 2 ):
+        return 0
+    else:
+        if ( word[0] != word[-1] ):
+            return 1 
+        else:
+            return is_palindrom(word[1:-1])
 
-Question 2:
-A 10-substring of a number is a substring of its digits that sum up to 10.
+        
+result = is_palindrom('mom')
+if (result== 0):
+    print('Palindrom')
+else:
+    print('Not a palindrom')
 
-For example, the 10-substrings of the number 3523014 are:
-3523014, 3523014, 3523014, 3523014
-
-Write a python function, find_ten_substring(num_str) which accepts a string and returns the list of 10-substrings of that string.
-
-Handle the possible errors in the code written inside the function.
-
-Sample Input	Expected Output
-'3523014'	['5230', '23014', '523', '352']
 
 Question 3:
 Given a number n, write a program to find the sum of the largest prime factors of each of nine consecutive numbers starting from n.
